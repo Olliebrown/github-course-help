@@ -16,5 +16,9 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "slugify": "^1.6.0"
   }
 }
