@@ -1,7 +1,8 @@
 {
   "classTeam": {
     "name": "GDD 325 Fall 2021 Koehle",
-    "description": "Team for all students in Prof. Koehle's sections of GDD 325 for Fall 2021"
+    "description": "Team for all students in Prof. Koehle's sections of GDD 325 for Fall 2021",
+    "instructor": "KarlKoehle"
   },
   "projectTeams": [
     {

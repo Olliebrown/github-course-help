@@ -1,0 +1,19 @@
+{
+  "classTeam": {
+    "name": "GDD 450-451 2021-2022 Seaver",
+    "description": "Team for all students in Prof. Seaver's sections of GDD 450/451 for 2021-2022 school year",
+    "instructor": "joshuaseaver"
+  },
+  "projectTeams": [
+    {
+      "name": "Team Alpha",
+      "description": "The Alpha Team in Prof. Seaver's GDD 450/451 course for 2021-2022",
+      "repository": {
+        "name": "Team Alpha Repo 21-22",
+        "description": "Code repository for the Team Alpha project"
+      },
+      "users": [
+      ]
+    }
+  ]
+}

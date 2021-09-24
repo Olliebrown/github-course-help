@@ -1,8 +1,12 @@
 import fs from 'fs'
-import { createGitHubRepository, createGitHubTeam, getGitHubUserInfoWithMembership, inviteUserToTeam } from './lib/gitHubHelp.js'
+import {
+  createGitHubRepositoryFromTemplate,
+  getGitHubUserInfoWithMembership,
+  createGitHubTeam, addToGitHubTeam
+} from './lib/gitHubHelp.js'
 
-const rawListJSON = fs.readFileSync('./classProjectData/koehleFall2021Exp.json', { encoding: 'utf8' })
-const koehleF21ExperimentTeamList = JSON.parse(rawListJSON)
+const rawListJSON = fs.readFileSync('./classProjectData/seaverFall2021-450.json', { encoding: 'utf8' })
+const teamInfoData = JSON.parse(rawListJSON)
 
 // Main function
 async function main () {
@@ -10,18 +14,18 @@ async function main () {
     // Make the full class team
     console.log('Creating class team ...')
     const classTeamInfo = await createGitHubTeam(
-      koehleF21ExperimentTeamList.classTeam.name,
-      koehleF21ExperimentTeamList.classTeam.description,
+      teamInfoData.classTeam.name,
+      teamInfoData.classTeam.description,
       'UWStout'
     )
 
     if (classTeamInfo === undefined) { return }
-    console.log(classTeamInfo)
+    // console.log(classTeamInfo)
 
     // Make the individual project teams
     console.log('Creating project teams ...')
     const projectTeamInfo = await Promise.all(
-      koehleF21ExperimentTeamList.projectTeams.map((project) => {
+      teamInfoData.projectTeams.map((project) => {
         return createGitHubTeam(
           project.name, project.description, 'UWStout', classTeamInfo.id
         )
@@ -29,43 +33,60 @@ async function main () {
     )
 
     if (projectTeamInfo.includes(undefined)) { return }
-    console.log(projectTeamInfo)
+    // console.log(projectTeamInfo)
 
     // Make the individual project repos
     console.log('Creating project repos ...')
     const projectRepoInfo = await Promise.all(
-      koehleF21ExperimentTeamList.projectTeams.map((project, i) => {
-        return createGitHubRepository(
+      teamInfoData.projectTeams.map((project, i) => {
+        return createGitHubRepositoryFromTemplate(
           project.repository.name,
           project.repository.description,
-          project.repository.template,
           'UWStout',
-          projectTeamInfo[i].slug
+          projectTeamInfo[i].slug,
+          project.repository.template
         )
       })
     )
 
     if (projectRepoInfo.includes(undefined)) { return }
-    console.log(projectRepoInfo)
+    // console.log(projectRepoInfo)
 
-    // Make flat user list
+    // Make flat user and team list (starting with instructor)
     const userList = []
-    const teamList = []
-    koehleF21ExperimentTeamList.projectTeams.forEach((project, i) => {
+    const userTeamList = []
+    teamInfoData.projectTeams.forEach((project, i) => {
       userList.push(...project.users)
-      teamList.push(...Array(project.users.length).fill(projectTeamInfo[i].id))
+      userTeamList.push(...Array(project.users.length).fill(projectTeamInfo[i].slug))
     })
 
     // Lookup extended user info
     const membershipInfo = await getGitHubUserInfoWithMembership('UWStout', userList)
-    const inviteList = membershipInfo.map((membership, i) => ({ ...membership, team: teamList[i] }))
+    const inviteList = membershipInfo.map((membership, i) => ({ ...membership, teamSlug: userTeamList[i] }))
 
-    // Create invites for all members
-    console.log('Sending user invites ...')
+    // Create invites for the instructor (if there is one)
+    if (teamInfoData.classTeam.instructor) {
+      console.log('Adding instructor to teams ...')
+      const teacherInfo = await getGitHubUserInfoWithMembership('UWStout',
+        [teamInfoData.classTeam.instructor]
+      )
+      await Promise.all([
+        addToGitHubTeam('UWStout', classTeamInfo.slug, teacherInfo[0].userName, 'maintainer'),
+        ...projectTeamInfo.map((projectTeam) => (
+          addToGitHubTeam('UWStout', projectTeam.slug, teacherInfo[0].userName, 'maintainer')
+        ))
+      ])
+    }
+
+    // Create invites for the users
+    console.log('Adding users to teams ...')
     await Promise.all(
-      inviteList.map((invite) => (
-        inviteUserToTeam(invite.id, 'UWStout', [classTeamInfo.id, invite.team])
-      ))
+      inviteList.map((invite) => {
+        return Promise.all([
+          addToGitHubTeam('UWStout', classTeamInfo.slug, invite.userName),
+          addToGitHubTeam('UWStout', invite.teamSlug, invite.userName)
+        ])
+      })
     )
   } catch (err) {
     console.error('Something went wrong')
