@@ -1,0 +1,32 @@
+{
+  "classTeam": {
+    "name": "GDD 450-451 2021-2022 Berrier",
+    "description": "Team for all students in Prof. Berrier's sections of GDD 450/451 for 2021-2022 school year",
+    "instructor": "Olliebrown"
+  },
+  "projectTeams": [
+    {
+      "name": "DuolBots Team",
+      "description": "The team working on DuolBots for Prof. Berrier's GDD 450/451 course for 2021-2022",
+      "repository": {
+        "name": "DuolBots Proto Repo 21-22",
+        "description": "Code repository for the DuolBots Team prototyping"
+      },
+      "users": [
+        "ahill-a",
+        "morgen-ly",
+        "kapelkae0815",
+        "paynee7752",
+        "TRKmanges",
+        "WyattSenalik",
+        "es-vang",
+        "grossz0926",
+        "CWoulf",
+        "FiniteWill",
+        "vudante",
+        "GrabowskyS",
+        "svian"
+      ]
+    }
+  ]
+}

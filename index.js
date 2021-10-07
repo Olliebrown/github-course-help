@@ -1,11 +1,11 @@
 import fs from 'fs'
 import {
-  createGitHubRepositoryFromTemplate,
+  createGitHubRepository,
   getGitHubUserInfoWithMembership,
   createGitHubTeam, addToGitHubTeam
 } from './lib/gitHubHelp.js'
 
-const rawListJSON = fs.readFileSync('./classProjectData/seaverFall2021-450.json', { encoding: 'utf8' })
+const rawListJSON = fs.readFileSync('./classProjectData/berrierFall2021-325-full.json', { encoding: 'utf8' })
 const teamInfoData = JSON.parse(rawListJSON)
 
 // Main function
@@ -39,7 +39,7 @@ async function main () {
     console.log('Creating project repos ...')
     const projectRepoInfo = await Promise.all(
       teamInfoData.projectTeams.map((project, i) => {
-        return createGitHubRepositoryFromTemplate(
+        return createGitHubRepository(
           project.repository.name,
           project.repository.description,
           'UWStout',

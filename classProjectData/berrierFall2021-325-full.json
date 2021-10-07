@@ -1,0 +1,89 @@
+{
+  "classTeam": {
+    "name": "GDD 325 Fall 2021 Berrier",
+    "description": "Team for all students in Prof. B's sections of GDD 325 for Fall 2021",
+    "instructor": "Olliebrown"
+  },
+  "projectTeams": [
+    {
+      "name": "Culinary Game Team - Berrier 325 F21",
+      "description": "The team working on 'Culinary Game' for GDD 325 in Fall 2021",
+      "repository": {
+        "name": "Culinary Game F21",
+        "description": "The repository for 'Culinary Game' for GDD 325 in Fall 2021",
+        "template": "UWStout/phaser3-esbuild-es6-template"
+      },
+      "users": [
+        "Skrimbus",
+        "fergusonc8841",
+        "braunn8142",
+        "muhammadn1200",
+        "BassS0ul"
+      ]
+    },
+    {
+      "name": "Zoomstick Team - Berrier 325 F21",
+      "description": "The team working on 'Zoomstick' for GDD 325 in Fall 2021",
+      "repository": {
+        "name": "Zoomstick F21",
+        "description": "The repository for 'Zoomstick' for GDD 325 in Fall 2021",
+        "template": "UWStout/phaser3-esbuild-es6-template"
+      },
+      "users": [
+        "Hasiaki",
+        "TheNoxoholic",
+        "Eless0",
+        "dustytheaverage",
+        "toppop7"
+      ]
+    },
+    {
+      "name": "Gladiator Dogs Team - Berrier 325 F21",
+      "description": "The team working on 'Gladiator Dogs' for GDD 325 in Fall 2021",
+      "repository": {
+        "name": "Gladiator Dogs F21",
+        "description": "The repository for 'Gladiator Dogs' for GDD 325 in Fall 2021",
+        "template": "UWStout/phaser3-esbuild-es6-template"
+      },
+      "users": [
+        "hailstorm1",
+        "Rydiante",
+        "Qwertybanana",
+        "jaydonpfab",
+        "Jarmzie"
+      ]
+    },
+    {
+      "name": "Crosshatch and Slash Team - Berrier 325 F21",
+      "description": "The team working on 'Crosshatch & Slash' for GDD 325 in Fall 2021",
+      "repository": {
+        "name": "Crosshatch and Slash F21",
+        "description": "The repository for 'Crosshatch & Slash' for GDD 325 in Fall 2021",
+        "template": "UWStout/phaser3-esbuild-es6-template"
+      },
+      "users": [
+        "Elska85",
+        "magsmarcinkiewicz",
+        "CharlesHeikkila",
+        "BradyBogucki",
+        "KyleChristensen11037"
+      ]
+    },
+    {
+      "name": "Otherworldly Inc Team - Berrier 325 F21",
+      "description": "The team working on 'Otherworldly Inc.' for GDD 325 in Fall 2021",
+      "repository": {
+        "name": "Otherworldly Inc F21",
+        "description": "The repository for 'Otherworldly Inc.' for GDD 325 in Fall 2021",
+        "template": "UWStout/phaser3-esbuild-es6-template"
+      },
+      "users": [
+        "HarendaB",
+        "JamesValentino",
+        "LyraLies",
+        "Raiins",
+        "WannabeDesigner"
+      ]
+    }
+  ]
+}
