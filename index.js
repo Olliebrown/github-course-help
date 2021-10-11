@@ -5,7 +5,7 @@ import {
   createGitHubTeam, addToGitHubTeam
 } from './lib/gitHubHelp.js'
 
-const rawListJSON = fs.readFileSync('./classProjectData/berrierFall2021-325-full.json', { encoding: 'utf8' })
+const rawListJSON = fs.readFileSync('./classProjectData/koehleFall2021-325-full.json', { encoding: 'utf8' })
 const teamInfoData = JSON.parse(rawListJSON)
 
 // Main function

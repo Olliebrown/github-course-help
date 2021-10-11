@@ -1,0 +1,97 @@
+{
+	"classTeam": {
+		"name": "GDD 325 Fall 2021 Koehle",
+		"description": "Team for all students in Prof. Koehle's sections of GDD 325 for Fall 2021",
+		"instructor": "KarlKoehle"
+	},
+	"projectTeams": [{
+			"name": "Cat Tale Team - Koehle 325 F21",
+			"description": "The team making the \"Cat Tale\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Cat Tale F21",
+				"description": "Code repository for the 'Cat Tale' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"trincat",
+				"AriHytti",
+				"noshkren11",
+				"LutzJ8157"
+			]
+		},
+		{
+			"name": "Endangered Encounter Team - Koehle 325 F21",
+			"description": "The team making the \"Endangered Encounter\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Endangered Encounter F21",
+				"description": "Code repository for the 'Endangered Encounter' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"bryant-borland",
+				"heartsinge",
+				"bhengst"
+			]
+		},
+		{
+			"name": "Fruit Smoothie Team - Koehle 325 F21",
+			"description": "The team making the \"Fruit Smoothie\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Fruit Smoothie F21",
+				"description": "Code repository for the 'Fruit Smoothie' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"CrunchMB",
+				"tazzman1570",
+				"sommerl0925",
+				"Marasaki"
+			]
+		},
+		{
+			"name": "Monster Diner Team - Koehle 325 F21",
+			"description": "The team making the \"Monster Diner\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Monster Diner F21",
+				"description": "Code repository for the 'Monster Diner' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"Thefeelz",
+				"omar62201",
+				"Wenzelt2996"
+			]
+		},
+		{
+			"name": "Mystery Team - Koehle 325 F21",
+			"description": "The team making the \"Mystery\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Mystery F21",
+				"description": "Code repository for the 'Mystery' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"Zachanj",
+				"Bluezinga",
+				"kopplina",
+				"levendowskil3713",
+				"RavenRohne"
+			]
+		},
+		{
+			"name": "Puzzle Path Team - Koehle 325 F21",
+			"description": "The team making the \"Puzzle Path\" game in Prof. Koehle's GDD 325 in Fall 2021",
+			"repository": {
+				"name": "Puzzle Path F21",
+				"description": "Code repository for the 'Puzzle Path' ",
+				"template": "UWStout/phaser3-esbuild-es6-template"
+			},
+			"users": [
+				"TimeDrakken",
+				"GillianRTM",
+				"SamsonSmithC",
+				"BenTrute"
+			]
+		}
+	]
+}
